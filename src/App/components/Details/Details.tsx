@@ -18,8 +18,7 @@ export const Details: React.FC<ConnectedProps> = ({
 
   const { title, time, consolidated_weather } = data;
   const date = new Date(time);
-
-  const weatherData = consolidated_weather.map((item: any) => {
+  const weatherData = consolidated_weather && consolidated_weather.map((item: any) => {
     const valuesToRound = ["the_temp", "max_temp", "min_temp", "wind_speed"];
     const roundedValues = valuesToRound.map(key => ({
       [key]: Math.round(item[key])
@@ -33,11 +32,11 @@ export const Details: React.FC<ConnectedProps> = ({
     return Object.assign({}, data, ...roundedValues);
   });
 
-  const current = weatherData[0];
+  const current = weatherData && weatherData[0];
 
   return (
     <S.Wrapper>
-      {!loading ? (
+      {!loading && current ? (
         <S.Grid>
           <S.LocationName>{title}</S.LocationName>
           <S.Date>
