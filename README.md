@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Initial setup
+
+Create a new file in a root directory named `.env.development.local` then copy and paste to it contents of this file `.env.development.local.dist`
+
 ## Available Scripts
 
 In the project directory, you can run:
