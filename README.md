@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Initial setup
 
-Create a new file in a root directory named `.env.development.local` then copy and paste to it contents of this file `.env.development.local.dist`
+Create a new file in a root directory named `.env.development.local` then copy and paste to it contents of `.env.development.local.dist`
 
 ## Available Scripts
 

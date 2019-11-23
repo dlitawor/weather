@@ -18,7 +18,7 @@ export const Chart: React.FC<ChartProps> = ({ data }) => {
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="applicable_date" />
         <YAxis />
-        <Tooltip label={"Temp"} />
+        <Tooltip />
       </LineChart>
     </S.Wrap>
   );

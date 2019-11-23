@@ -75,6 +75,7 @@ export const LocationsListWrap = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.md}px) {
     margin-top: 80px;
     height: auto;
+    max-height: 600px;
   }
 `;
 

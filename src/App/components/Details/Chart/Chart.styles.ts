@@ -7,7 +7,7 @@ export const Wrap = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.sm}px) {
     margin-top: 36px;
     margin-left: -20px;
-    
+
     .recharts-wrapper {
       width: 100% !important;
     }
