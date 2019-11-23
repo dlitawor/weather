@@ -13,7 +13,7 @@ import './index.css';
 
 const middlewares = [endpointMiddleware, apiMiddleware];
 
-const store = createStore(
+export const store = createStore(
   appReducer,
   compose(
     applyMiddleware(...middlewares),

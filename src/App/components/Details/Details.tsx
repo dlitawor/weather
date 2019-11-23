@@ -49,7 +49,10 @@ export const Details: React.FC<ConnectedProps> = ({
             <S.InfoWrap>
               <S.Label>Now</S.Label>
               <S.SideInfoWrap>
-                <S.Value>{current.the_temp}&deg;</S.Value>
+                <S.Value>
+                  {current.the_temp}
+                  {"\u00b0"}
+                </S.Value>
                 <S.SideInfo>{current.weather_state_name}</S.SideInfo>
               </S.SideInfoWrap>
             </S.InfoWrap>
@@ -57,24 +60,30 @@ export const Details: React.FC<ConnectedProps> = ({
           <S.SubPanel>
             <S.InfoWrap>
               <S.Label>Max</S.Label>
-              <S.Value>{current.max_temp}&deg;</S.Value>
+              <S.Value>
+                {current.max_temp}
+                <S.Unit>{"\u00b0"}</S.Unit>
+              </S.Value>
             </S.InfoWrap>
             <S.InfoWrap>
               <S.Label>Min</S.Label>
-              <S.Value>{current.min_temp}&deg;</S.Value>
+              <S.Value>
+                {current.min_temp}
+                <S.Unit>{"\u00b0"}</S.Unit>
+              </S.Value>
             </S.InfoWrap>
             <S.InfoWrap>
               <S.Label>Rain</S.Label>
               <S.Value>
                 {current.predictability}
-                <S.Unit>%</S.Unit>
+                <S.UnitSmall>%</S.UnitSmall>
               </S.Value>
             </S.InfoWrap>
             <S.InfoWrap>
               <S.Label>Wind</S.Label>
               <S.Value>
                 {current.wind_speed}
-                <S.Unit>km/h</S.Unit>
+                <S.UnitSmall>km/h</S.UnitSmall>
               </S.Value>
             </S.InfoWrap>
           </S.SubPanel>

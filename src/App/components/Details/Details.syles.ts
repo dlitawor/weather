@@ -88,7 +88,9 @@ export const Value = styled.div`
   }
 `;
 
-export const Unit = styled.span`
+export const Unit = styled.span``;
+
+export const UnitSmall = styled.span`
   font-size: 12px;
   
   @media (min-width: ${props => props.theme.breakpoints.sm}px) {
