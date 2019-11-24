@@ -4,6 +4,7 @@ import * as S from "./Details.syles";
 import { weekDays, months } from "../../dictionaries/time";
 import { Chart } from "./Chart/Chart";
 import { Spinner } from "../shared/Spinner/Spinner";
+import { WeatherType } from "../../redux/location/locationTypes";
 
 export const DEFAULT_CITY_ID = 44418;
 
@@ -18,19 +19,24 @@ export const Details: React.FC<ConnectedProps> = ({
 
   const { title, time, consolidated_weather } = data;
   const date = new Date(time);
-  const weatherData = consolidated_weather && consolidated_weather.map((item: any) => {
-    const valuesToRound = ["the_temp", "max_temp", "min_temp", "wind_speed"];
-    const roundedValues = valuesToRound.map(key => ({
-      [key]: Math.round(item[key])
-    }));
 
-    const data = {
-      ...item,
-      applicable_date: item.applicable_date.slice(5)
-    };
+  const weatherData =
+    consolidated_weather &&
+    consolidated_weather.map((item: WeatherType) => {
+      const keys = Object.keys(item);
+      const values = Object.values(item);
 
-    return Object.assign({}, data, ...roundedValues);
-  });
+      const roundedValues = values.map(value =>
+        typeof value === "number" ? Math.round(value) : value
+      );
+
+      const finalObj = keys.map((key, index) => ({
+        [key]: roundedValues[index],
+        applicable_date: item.applicable_date.slice(5)
+      }));
+
+      return Object.assign({}, ...finalObj);
+    });
 
   const current = weatherData && weatherData[0];
 
